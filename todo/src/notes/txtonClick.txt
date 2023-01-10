@@ -1,0 +1,26 @@
+function App() {
+  const [inputText, setInputText] = useState('');
+  let newText;
+
+  const changeInput = (txt) => {
+    console.log(txt.target.value);
+    newText = txt.target.value;
+  }
+
+  function consoleInput() {
+    console.log(newText);
+    setInputText(newText);
+  }
+
+  return (
+    <div className="App">
+      <form>
+        <input type="text" placeholder='enter text' onChange={changeInput}></input>
+      </form>
+
+      <button onClick={consoleInput}>Enter</button>
+
+      <div className='displayText'>{inputText}</div>
+    </div>
+  );
+}

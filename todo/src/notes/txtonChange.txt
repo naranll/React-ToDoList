@@ -1,0 +1,25 @@
+function App() {
+  const [inputText, setInputText] = useState('');
+
+  ///*works as well*/
+  // function passInput(newText) {
+  //   console.log(newText.target.value);
+  //   setInputText(newText.target.value);
+  // }
+
+  const changeInput = (text) => {
+    setInputText(text.target.value);
+  }
+
+  let newText;
+
+  return (
+    <div className="App">
+      <form>
+        <input type="text" placeholder='enter text' onChange={changeInput}></input>
+      </form>
+
+      <div className='displayText'>{inputText}</div>
+    </div>
+  );
+}
